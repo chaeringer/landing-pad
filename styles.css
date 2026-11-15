@@ -1,0 +1,250 @@
+.landing-pad {
+  padding: 32px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.landing-pad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.landing-pad-intro {
+  flex: 1;
+  min-width: 0;
+}
+
+.landing-pad-header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.landing-pad-date {
+  color: var(--text-muted);
+}
+
+.landing-pad-anniversary {
+  margin-top: 6px;
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+/* ---------- windsock ---------- */
+
+.landing-pad-windsock {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.landing-pad-windsock-caption {
+  font-size: 0.75em;
+  color: var(--text-faint);
+}
+
+.landing-pad-windsock-svg .ws-pad { fill: var(--background-modifier-border); }
+.landing-pad-windsock-svg .ws-pole { stroke: var(--text-muted); stroke-width: 2; stroke-linecap: round; }
+.landing-pad-windsock-svg .ws-pole-top { fill: var(--text-muted); }
+.landing-pad-windsock-svg .ws-stripe-a { fill: var(--color-orange); }
+.landing-pad-windsock-svg .ws-stripe-b { fill: #f4f4f4; stroke: var(--color-orange); stroke-width: 0.6; }
+.landing-pad-windsock-svg .ws-pennant { fill: var(--color-accent); }
+.landing-pad-windsock-svg .ws-bird { fill: var(--text-muted); }
+.landing-pad-windsock-svg .ws-beak { fill: var(--color-orange); }
+
+/* The flap group moves inside the rotated sock, around the end attached to the pole. */
+.landing-pad-windsock-svg .ws-flap {
+  transform-box: fill-box;
+  transform-origin: left center;
+}
+
+.landing-pad-windsock-svg.is-breezy .ws-flap {
+  animation: landing-pad-flap 3.2s ease-in-out infinite;
+}
+
+.landing-pad-windsock-svg.is-flapping .ws-flap {
+  animation: landing-pad-flap 0.9s ease-in-out infinite;
+}
+
+.landing-pad-windsock-svg.is-calm .ws-stripe-a { fill: var(--text-faint); }
+.landing-pad-windsock-svg.is-calm .ws-stripe-b { stroke: var(--text-faint); }
+
+@keyframes landing-pad-flap {
+  0%, 100% { transform: skewY(-4deg) scaleY(0.94); }
+  50% { transform: skewY(4deg) scaleY(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-pad-windsock-svg .ws-flap { animation: none !important; }
+}
+
+/* ---------- from the vault ---------- */
+
+.landing-pad-vault {
+  grid-column: 1 / -1;
+}
+
+.landing-pad-reroll {
+  margin-left: auto;
+}
+
+.landing-pad-vault-when {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.landing-pad-vault-title {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.landing-pad-vault-snippet {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.landing-pad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.landing-pad-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.landing-pad-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05em;
+  margin: 0 0 10px;
+}
+
+.landing-pad-icon {
+  display: inline-flex;
+  color: var(--text-accent);
+}
+
+.landing-pad-card ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.landing-pad-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.landing-pad-card li:last-child {
+  border-bottom: none;
+}
+
+.landing-pad-item-main {
+  min-width: 0;
+}
+
+.landing-pad-item-main a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.landing-pad-folder {
+  font-size: 0.8em;
+  color: var(--text-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.landing-pad-meta {
+  flex-shrink: 0;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.landing-pad-empty {
+  color: var(--text-faint);
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .landing-pad {
+    padding: 16px;
+  }
+}
+
+/* ---------- quick actions ---------- */
+
+.landing-pad-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.landing-pad .landing-pad-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+  padding: 8px 10px 8px 16px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 999px;
+  background: var(--background-primary);
+  box-shadow: none;
+  color: var(--text-normal);
+  font-size: var(--font-ui-medium);
+  cursor: pointer;
+}
+
+.landing-pad .landing-pad-action:hover {
+  background: var(--background-modifier-hover);
+}
+
+.landing-pad-action-icon {
+  display: inline-flex;
+  color: var(--text-muted);
+}
+
+.landing-pad-action-label {
+  padding-right: 6px;
+}
+
+.landing-pad-action-hotkey {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--background-modifier-hover);
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+/* ---------- customize ---------- */
+
+.landing-pad-customize {
+  align-self: flex-start;
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.landing-pad-all-hidden {
+  margin-top: 24px;
+}

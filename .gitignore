@@ -1,0 +1,11 @@
+# Obsidian data when the repo is used as a plugin folder
+data.json
+reads-*.json
+
+# Screenshot harness output
+docs/screenshots/vendor/
+docs/screenshots/page.html
+docs/screenshots/out/
+
+node_modules/
+.DS_Store

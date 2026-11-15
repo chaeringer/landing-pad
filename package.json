@@ -1,0 +1,10 @@
+{
+  "name": "landing-pad",
+  "version": "1.0.0",
+  "description": "Obsidian start page: recent, most-read and bookmarked notes, a forgotten note of the day, and a windsock for your writing pace.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/plugin.test.js"
+  }
+}

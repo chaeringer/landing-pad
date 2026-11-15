@@ -1,0 +1,10 @@
+{
+  "id": "landing-pad",
+  "name": "Landing Pad",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Start page with your recent, most-read and bookmarked notes, a forgotten note to rediscover each day, and a windsock that shows how much you've been writing.",
+  "author": "chaeringer",
+  "authorUrl": "https://github.com/chaeringer",
+  "isDesktopOnly": false
+}
